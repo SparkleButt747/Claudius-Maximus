@@ -17,6 +17,8 @@ On Terminal-Bench 2.0, the full harness achieves **100% pass rate** (up from ~60
 | + Loop detection | ~95% |
 | + Full pipeline tuned | 100% |
 
+> **A note on overfitting:** The 100% score on Terminal-Bench includes domain-specific task patterns and hints in `CLAUDE.md` and `task_patterns.md` that were iteratively tuned against this specific benchmark. Some of this guidance is close to "teaching to the test" — e.g. telling the agent how git-history tasks typically hide secrets, or how scientific tasks structure their output. The general-purpose techniques (forced verification, mandatory planning, loop detection, environment bootstrapping) transfer well to other benchmarks. The task-specific patterns will not. When adapting this harness for a new benchmark, expect the structural techniques to carry over but plan to develop your own task patterns through iteration. See [docs/optimization-guide.md](docs/optimization-guide.md#a-note-on-overfitting) for more detail.
+
 ## How It Works
 
 Three systems work together:
@@ -151,7 +153,7 @@ export TASK_GUARDIAN_LATE_PCT=0.75          # Urge wrap-up
 
 ## Contributing
 
-PRs welcome. The most valuable contributions are:
+Contributions are welcome via pull requests. By submitting a PR, you agree to license your contribution under the same CC BY-NC-ND 4.0 terms. Valuable areas:
 
 - **New benchmark examples** — add an `examples/<benchmark>/` directory with config and README
 - **Task patterns** — extend `task_patterns.md` with category-specific guidance
@@ -160,4 +162,6 @@ PRs welcome. The most valuable contributions are:
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+CC BY-NC-ND 4.0 — see [LICENSE](LICENSE).
+
+You may share this work with attribution. Commercial use and derivative works are not permitted.

@@ -100,6 +100,22 @@ These techniques compound. Our progression on Terminal-Bench 2.0:
 | +Loop detection | Guardian hooks | ~95% |
 | +Tuning | Full pipeline, optimised prompt | 100% |
 
+## A Note on Overfitting
+
+The 100% Terminal-Bench score should be interpreted with nuance. To reach it, we iteratively tuned `CLAUDE.md` and `task_patterns.md` with domain-specific knowledge gained from analysing failed runs against this specific benchmark. Some of this guidance borders on "teaching to the test":
+
+- **Task-pattern hints** like "git tasks often hide secrets in history" or "scientific tasks expect exact output formatting" directly address Terminal-Bench task categories
+- **Verification commands** in the prompt were tuned to match the test frameworks Terminal-Bench uses
+- **Bootstrap commands** were expanded based on which tools Terminal-Bench tasks commonly require
+
+This is not uncommon in benchmark optimisation — most top-performing agents on public leaderboards do similar tuning. But it means:
+
+1. **The 100% score overstates generalisation.** On an unseen benchmark, expect the structural techniques to land but not the task-specific patterns.
+2. **Techniques 1-5 (forced verification through loop detection) are genuinely transferable.** These address universal agent failure modes regardless of benchmark.
+3. **The final ~5% ("full pipeline tuned") is benchmark-specific.** You'll need to develop your own task patterns through iteration on your target benchmark.
+
+When reporting results, we recommend distinguishing between "structural harness" scores (~90-95%) and "fully tuned" scores (100%) to give an honest picture.
+
 ## Customisation for Your Benchmark
 
 1. **Start with CLAUDE.md** — this has the biggest impact and is easiest to customise
