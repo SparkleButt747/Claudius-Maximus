@@ -153,7 +153,7 @@ export TASK_GUARDIAN_LATE_PCT=0.75          # Urge wrap-up
 
 ## Contributing
 
-Contributions are welcome via pull requests. By submitting a PR, you agree to license your contribution under the same CC BY-NC-ND 4.0 terms. Valuable areas:
+Contributions are welcome via pull requests. By submitting a PR, you agree to license your contribution under the same CC BY-NC-SA 4.0 terms. Valuable areas:
 
 - **New benchmark examples** — add an `examples/<benchmark>/` directory with config and README
 - **Task patterns** — extend `task_patterns.md` with category-specific guidance
@@ -162,6 +162,6 @@ Contributions are welcome via pull requests. By submitting a PR, you agree to li
 
 ## License
 
-CC BY-NC-ND 4.0 — see [LICENSE](LICENSE).
+CC BY-NC-SA 4.0 — see [LICENSE](LICENSE).
 
-You may share this work with attribution. Commercial use and derivative works are not permitted.
+You may share and adapt this work with attribution. Commercial use is not permitted. Derivative works must use the same license.
