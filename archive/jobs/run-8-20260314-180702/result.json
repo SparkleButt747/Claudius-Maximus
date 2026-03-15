@@ -1,0 +1,87 @@
+{
+    "id": "73d3ae05-e57c-4112-ade3-cb90a602d652",
+    "started_at": "2026-03-14T18:07:07.055235",
+    "finished_at": "2026-03-14T21:59:56.571167",
+    "n_total_trials": 36,
+    "stats": {
+        "n_trials": 36,
+        "n_errors": 18,
+        "evals": {
+            "tbench-claude-code__claude-opus-4-6__terminal-bench": {
+                "n_trials": 36,
+                "n_errors": 18,
+                "metrics": [
+                    {
+                        "mean": 0.3055555555555556
+                    }
+                ],
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "adaptive-rejection-sampler__bVH3nCG",
+                            "configure-git-webserver__MuTabLR",
+                            "raman-fitting__uUB85xM",
+                            "extract-elf__dzYa63X",
+                            "financial-document-processor__ZmGtW5a",
+                            "filter-js-from-html__sXaNkEo",
+                            "polyglot-c-py__AsEYQUM",
+                            "cancel-async-tasks__MmVFMX7",
+                            "git-leak-recovery__gtByzAH",
+                            "build-cython-ext__Xn8Zanj",
+                            "pytorch-model-recovery__JnSkGLY",
+                            "model-extraction-relu-logits__uu9XyAT",
+                            "nginx-request-logging__zjGoWBQ",
+                            "sparql-university__uVv6LRp",
+                            "large-scale-text-editing__RGaperg",
+                            "sqlite-db-truncate__77iYjrD",
+                            "sanitize-git-repo__s6KpYTs",
+                            "build-pmars__zpPEL3u",
+                            "rstan-to-pystan__4XPaPD8",
+                            "sqlite-with-gcov__E2Gxd7G",
+                            "openssl-selfsigned-cert__XUJJNzi",
+                            "constraints-scheduling__YroZdnB",
+                            "dna-insert__hH4RfTj",
+                            "vulnerable-secret__XpBtF83",
+                            "dna-assembly__7rxvhdG"
+                        ],
+                        "1.0": [
+                            "mteb-leaderboard__rQvd7wP",
+                            "mailman__fNWL68A",
+                            "query-optimize__73jTkc2",
+                            "protein-assembly__XiB6Q4m",
+                            "code-from-image__DyTABeK",
+                            "fix-code-vulnerability__Tz8ovqM",
+                            "mcmc-sampling-stan__nnbYfof",
+                            "regex-log__Agkuj2N",
+                            "feal-differential-cryptanalysis__83AujGy",
+                            "bn-fit-modify__mzvdFU3",
+                            "fix-ocaml-gc__Cm4mPdR"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "NonZeroAgentExitCodeError": [
+                        "fix-ocaml-gc__Cm4mPdR",
+                        "git-leak-recovery__gtByzAH",
+                        "build-cython-ext__Xn8Zanj",
+                        "pytorch-model-recovery__JnSkGLY",
+                        "model-extraction-relu-logits__uu9XyAT",
+                        "nginx-request-logging__zjGoWBQ",
+                        "sparql-university__uVv6LRp",
+                        "large-scale-text-editing__RGaperg",
+                        "sqlite-db-truncate__77iYjrD",
+                        "sanitize-git-repo__s6KpYTs",
+                        "build-pmars__zpPEL3u",
+                        "rstan-to-pystan__4XPaPD8",
+                        "sqlite-with-gcov__E2Gxd7G",
+                        "openssl-selfsigned-cert__XUJJNzi",
+                        "constraints-scheduling__YroZdnB",
+                        "dna-insert__hH4RfTj",
+                        "vulnerable-secret__XpBtF83",
+                        "dna-assembly__7rxvhdG"
+                    ]
+                }
+            }
+        }
+    }
+}

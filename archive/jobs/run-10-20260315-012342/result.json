@@ -1,0 +1,45 @@
+{
+    "id": "057ad699-38f6-4977-ba42-aaa6696f3889",
+    "started_at": "2026-03-15T01:23:46.964278",
+    "finished_at": "2026-03-15T02:55:14.002111",
+    "n_total_trials": 10,
+    "stats": {
+        "n_trials": 10,
+        "n_errors": 2,
+        "evals": {
+            "tbench-claude-code__claude-opus-4-6__terminal-bench": {
+                "n_trials": 10,
+                "n_errors": 2,
+                "metrics": [
+                    {
+                        "mean": 0.4
+                    }
+                ],
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "adaptive-rejection-sampler__uCCShMm",
+                            "raman-fitting__oLkqHoM",
+                            "filter-js-from-html__8LKqrau",
+                            "model-extraction-relu-logits__xp3oNbc",
+                            "dna-insert__7CzgvgG",
+                            "dna-assembly__ERH2XTt"
+                        ],
+                        "1.0": [
+                            "polyglot-c-py__uMe3xD6",
+                            "cancel-async-tasks__U7i8v2n",
+                            "build-pmars__JwgqcZc",
+                            "sqlite-with-gcov__Uo8PtC4"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "AgentTimeoutError": [
+                        "adaptive-rejection-sampler__uCCShMm",
+                        "dna-assembly__ERH2XTt"
+                    ]
+                }
+            }
+        }
+    }
+}

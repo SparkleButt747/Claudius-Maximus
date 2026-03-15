@@ -1,0 +1,103 @@
+{
+    "id": "6aca4a64-cf3f-418f-8e2a-b7459d2af909",
+    "task_name": "torch-tensor-parallelism",
+    "trial_name": "torch-tensor-parallelism__3U9qVoh",
+    "trial_uri": "file:///Users/brndy.747/terminal-bench-harness/jobs/run-7-20260314-132034/torch-tensor-parallelism__3U9qVoh",
+    "task_id": {
+        "git_url": "https://github.com/laude-institute/terminal-bench-2.git",
+        "git_commit_id": "69671fbaac6d67a7ef0dfec016cc38a64ef7a77c",
+        "path": "torch-tensor-parallelism"
+    },
+    "source": "terminal-bench",
+    "task_checksum": "2637b586b22a779d1a4f01508f5f2caeea21d0b126b53d938e06ae8e717b8d19",
+    "config": {
+        "task": {
+            "path": "torch-tensor-parallelism",
+            "git_url": "https://github.com/laude-institute/terminal-bench-2.git",
+            "git_commit_id": "69671fbaac6d67a7ef0dfec016cc38a64ef7a77c",
+            "overwrite": false,
+            "download_dir": null,
+            "source": "terminal-bench"
+        },
+        "trial_name": "torch-tensor-parallelism__3U9qVoh",
+        "trials_dir": "/Users/brndy.747/terminal-bench-harness/jobs/run-7-20260314-132034",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": 1.0,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": 3.0,
+        "environment_build_timeout_multiplier": 3.0,
+        "agent": {
+            "name": null,
+            "import_path": "agent:TBenchClaudeCode",
+            "model_name": "anthropic/claude-opus-4-6",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {
+                "max_turns": 200,
+                "reasoning_effort": "high"
+            },
+            "env": {}
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": 8192,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "job_id": "1be20728-0509-4949-bb2a-4b8385ec9c7c"
+    },
+    "agent_info": {
+        "name": "tbench-claude-code",
+        "version": "2.1.76",
+        "model_info": {
+            "name": "claude-opus-4-6",
+            "provider": "anthropic"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 443441,
+        "n_cache_tokens": 443418,
+        "n_output_tokens": 1321,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 1.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-03-14T13:20:38.881680Z",
+    "finished_at": "2026-03-14T13:31:26.745947Z",
+    "environment_setup": {
+        "started_at": "2026-03-14T13:20:38.882748Z",
+        "finished_at": "2026-03-14T13:20:42.493805Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-03-14T13:20:42.493870Z",
+        "finished_at": "2026-03-14T13:21:38.967870Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-03-14T13:21:38.967981Z",
+        "finished_at": "2026-03-14T13:28:26.194567Z"
+    },
+    "verifier": {
+        "started_at": "2026-03-14T13:28:26.194631Z",
+        "finished_at": "2026-03-14T13:31:24.788153Z"
+    }
+}

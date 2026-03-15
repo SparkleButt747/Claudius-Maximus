@@ -1,0 +1,121 @@
+# Claudius-Maximus Harness Configuration
+# All tuning knobs documented with optimal values derived from
+# top-performing agents (ForgeCode, Droid, LangChain, Letta, OB-1).
+
+# === Model Configuration ===
+model:
+  # Opus for maximum capability on hard tasks
+  # Sonnet for cost-efficiency on easy/medium tasks
+  primary: "claude-opus-4-6"
+  fallback: "claude-sonnet-4-6"
+
+  # Progressive thinking: high for planning/verification, medium for execution
+  # This is the "reasoning sandwich" technique from LangChain
+  thinking_budget:
+    bootstrap: "high"      # Phase 0: understand the environment
+    understand: "high"     # Phase 1: read task + tests
+    plan: "high"           # Phase 2: write execution plan
+    execute: "medium"      # Phase 3: run commands
+    verify: "high"         # Phase 4: verify + fix
+
+# === Agent Configuration ===
+agent:
+  max_turns: 200           # Maximum tool calls before forced stop
+  max_retries_per_step: 2  # After 2 failures, switch approach
+  max_file_edits: 4        # Loop detection threshold per file
+  non_interactive: true    # Never ask clarifying questions
+
+# === Timeout Configuration ===
+timeouts:
+  # Per-task timeouts (set by Harbor, but agent should be aware)
+  easy: 900        # 15 minutes
+  medium: 1800     # 30 minutes
+  hard: 3600       # 1 hour
+  extreme: 12000   # 3.3 hours
+
+  # Per-command timeouts (agent should use these)
+  default_command: 120     # 2 minutes
+  compilation: 300         # 5 minutes
+  download: 60             # 1 minute
+  test_run: 180            # 3 minutes
+
+# === Middleware Configuration ===
+middleware:
+  plan_enforcement: true          # Force plan before implementation
+  pre_completion_check: true      # Block exit without verification
+  loop_detection: true            # Detect repeated failures
+  time_budget_warnings: true      # Inject time warnings
+  environment_bootstrap: true     # Probe environment at start
+
+  # Warning thresholds (% of time budget)
+  time_warning_moderate: 50       # "Consider running verification"
+  time_warning_urgent: 75         # "Finish current work"
+  time_warning_critical: 90       # "Run verification NOW"
+
+# === Hook Configuration ===
+hooks:
+  # PreToolUse: track file edits, commands, detect verification
+  pre_tool: true
+  # PostToolUse: track errors, detect verification success
+  post_tool: true
+  # Stop: block exit without verification
+  stop_guard: true
+
+# === Harbor Integration ===
+harbor:
+  # Parallel execution (how many tasks to run simultaneously)
+  parallelism: 8
+  # Cloud environment
+  environment: "daytona"
+  # Dataset — change this for your benchmark
+  dataset: "terminal-bench@2.0"
+
+  # Agent setup commands (run in container before task starts)
+  setup_commands:
+    - "bash /harness/scripts/inject_harness.sh /app"
+
+  # Agent arguments
+  agent_args:
+    dangerously_skip_permissions: true
+    max_turns: 200
+
+  # Agent run command (agentic mode, not print mode)
+  run_command: "claude --dangerously-skip-permissions --max-turns 200 --prompt"
+
+# === Optimization Notes ===
+# These are the techniques that matter most, in order of impact:
+#
+# 1. FORCED VERIFICATION (+15-20% from ForgeCode & LangChain)
+#    - Agent MUST run tests before exiting
+#    - Stop hook blocks premature exit
+#    - This alone eliminates the #1 failure mode
+#
+# 2. MANDATORY PLANNING (+28% from ForgeCode: 38% → 66%)
+#    - Agent MUST write a numbered plan before implementing
+#    - Plan enforcement middleware detects implementation without plan
+#    - Plans reduce wasted effort and backtracking
+#
+# 3. ENVIRONMENT BOOTSTRAPPING (+5-8% from all top agents)
+#    - Probe container at start: OS, languages, tools, packages
+#    - Prevents 24.1% of command failures (missing tool errors)
+#    - One compound command, ~2 seconds
+#
+# 4. TEST-FIRST STRATEGY (+5-10% estimated)
+#    - Read test files BEFORE implementing
+#    - Tests are ground truth — they define success
+#    - Eliminates misunderstanding the task requirements
+#
+# 5. LOOP DETECTION (+3-5% from LangChain)
+#    - Track repeated edits to same file
+#    - Track consecutive same-error failures
+#    - Force strategy change after N failures
+#
+# 6. REASONING SANDWICH (+3-5% from LangChain)
+#    - High reasoning for planning and verification
+#    - Medium reasoning for execution
+#    - Balances compute cost vs. quality
+#
+# 7. TIME BUDGET AWARENESS (+2-3% from all top agents)
+#    - Inject warnings at 50%, 75%, 90% time thresholds
+#    - Prevents timeout failures
+#    - Encourages early verification

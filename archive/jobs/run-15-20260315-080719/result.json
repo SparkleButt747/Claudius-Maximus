@@ -1,0 +1,30 @@
+{
+    "id": "3ad80e39-5a02-4aab-9f3a-1fceec3065cf",
+    "started_at": "2026-03-15T08:07:23.246819",
+    "finished_at": "2026-03-15T08:40:51.538185",
+    "n_total_trials": 2,
+    "stats": {
+        "n_trials": 2,
+        "n_errors": 0,
+        "evals": {
+            "tbench-claude-code__claude-opus-4-6__terminal-bench": {
+                "n_trials": 2,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 1.0
+                    }
+                ],
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "model-extraction-relu-logits__Cbik79h",
+                            "dna-assembly__inAqg4j"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        }
+    }
+}

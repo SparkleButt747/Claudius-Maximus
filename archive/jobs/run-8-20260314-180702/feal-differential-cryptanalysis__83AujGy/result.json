@@ -1,0 +1,103 @@
+{
+    "id": "d77ba1e0-23ac-423e-9f18-8bc755219184",
+    "task_name": "feal-differential-cryptanalysis",
+    "trial_name": "feal-differential-cryptanalysis__83AujGy",
+    "trial_uri": "file:///Users/brndy.747/terminal-bench-harness/jobs/run-8-20260314-180702/feal-differential-cryptanalysis__83AujGy",
+    "task_id": {
+        "git_url": "https://github.com/laude-institute/terminal-bench-2.git",
+        "git_commit_id": "69671fbaac6d67a7ef0dfec016cc38a64ef7a77c",
+        "path": "feal-differential-cryptanalysis"
+    },
+    "source": "terminal-bench",
+    "task_checksum": "798945c624cad262a52c46271a557698875990a600a6a5cb35c2dfd9b00bf80d",
+    "config": {
+        "task": {
+            "path": "feal-differential-cryptanalysis",
+            "git_url": "https://github.com/laude-institute/terminal-bench-2.git",
+            "git_commit_id": "69671fbaac6d67a7ef0dfec016cc38a64ef7a77c",
+            "overwrite": false,
+            "download_dir": null,
+            "source": "terminal-bench"
+        },
+        "trial_name": "feal-differential-cryptanalysis__83AujGy",
+        "trials_dir": "/Users/brndy.747/terminal-bench-harness/jobs/run-8-20260314-180702",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": 1.0,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": 3.0,
+        "environment_build_timeout_multiplier": 3.0,
+        "agent": {
+            "name": null,
+            "import_path": "agent:TBenchClaudeCode",
+            "model_name": "anthropic/claude-opus-4-6",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {
+                "max_turns": 200,
+                "reasoning_effort": "high"
+            },
+            "env": {}
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": 8192,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "job_id": "73d3ae05-e57c-4112-ade3-cb90a602d652"
+    },
+    "agent_info": {
+        "name": "tbench-claude-code",
+        "version": "2.1.76",
+        "model_info": {
+            "name": "claude-opus-4-6",
+            "provider": "anthropic"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 659789,
+        "n_cache_tokens": 659769,
+        "n_output_tokens": 747,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 1.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-03-14T20:41:01.387097Z",
+    "finished_at": "2026-03-14T20:53:18.377036Z",
+    "environment_setup": {
+        "started_at": "2026-03-14T20:41:01.388204Z",
+        "finished_at": "2026-03-14T20:41:04.992730Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-03-14T20:41:04.992763Z",
+        "finished_at": "2026-03-14T20:41:44.648877Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-03-14T20:41:44.648947Z",
+        "finished_at": "2026-03-14T20:52:51.419776Z"
+    },
+    "verifier": {
+        "started_at": "2026-03-14T20:52:51.419848Z",
+        "finished_at": "2026-03-14T20:53:16.701578Z"
+    }
+}

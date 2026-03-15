@@ -1,0 +1,62 @@
+{
+    "id": "a452fbbb-9836-438a-a5a9-68aeba485d44",
+    "started_at": "2026-03-14T22:02:44.295444",
+    "finished_at": null,
+    "n_total_trials": 25,
+    "stats": {
+        "n_trials": 25,
+        "n_errors": 2,
+        "evals": {
+            "tbench-claude-code__claude-opus-4-6__terminal-bench": {
+                "n_trials": 25,
+                "n_errors": 2,
+                "metrics": [
+                    {
+                        "mean": 0.6
+                    }
+                ],
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "adaptive-rejection-sampler__hzw4MzN",
+                            "raman-fitting__KY7sX7V",
+                            "filter-js-from-html__SeiHJ4H",
+                            "polyglot-c-py__g9opwSw",
+                            "cancel-async-tasks__nAN7sW9",
+                            "model-extraction-relu-logits__EcsWgzL",
+                            "build-pmars__rfdTWAG",
+                            "sqlite-with-gcov__R9Y2JGz",
+                            "dna-insert__G5heW7d",
+                            "dna-assembly__ejj7EHh"
+                        ],
+                        "1.0": [
+                            "configure-git-webserver__xWkzCBY",
+                            "extract-elf__XJqqKwR",
+                            "financial-document-processor__vnKfQji",
+                            "git-leak-recovery__qseCbwi",
+                            "build-cython-ext__wW3udsP",
+                            "pytorch-model-recovery__PB6fVqf",
+                            "nginx-request-logging__9Mcu8cd",
+                            "sparql-university__inXXARg",
+                            "large-scale-text-editing__zt3mD4a",
+                            "sqlite-db-truncate__ET2rtcU",
+                            "sanitize-git-repo__Up4Jymq",
+                            "rstan-to-pystan__sR9FBwK",
+                            "openssl-selfsigned-cert__YaazkNF",
+                            "constraints-scheduling__daNQp2X",
+                            "vulnerable-secret__rZEbRC7"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "AgentTimeoutError": [
+                        "adaptive-rejection-sampler__hzw4MzN",
+                        "dna-assembly__ejj7EHh"
+                    ],
+                    "AgentSetupTimeoutError": []
+                }
+            }
+        }
+    },
+    "trial_results": []
+}

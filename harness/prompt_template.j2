@@ -1,0 +1,23 @@
+{# Claudius-Maximus Optimized Prompt Template for Harbor #}
+{# Usage: harbor run ... --prompt-template prompt_template.j2 #}
+{# Note: CLAUDE.md provides detailed instructions. This template provides the task. #}
+
+## TASK
+
+{{ instruction }}
+
+{% if timeout_seconds is defined %}
+Time budget: {{ timeout_seconds }}s.
+{% endif %}
+
+## WORKFLOW REMINDER
+
+1. Bootstrap: probe OS, languages, tools (single compound command)
+2. Read instruction.md AND test files — tests define success
+3. Write a numbered plan (5-15 steps)
+4. Execute with error recovery (switch approach after 2 failures)
+5. **VERIFY**: `cd /app && bash tests/test.sh` — NEVER stop without this
+
+Rules: no questions, no early stops, test passing is ALL that matters.
+
+BEGIN.

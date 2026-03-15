@@ -1,0 +1,37 @@
+{
+    "id": "482d6b10-7c9c-4082-ab12-8a74f55e2ea2",
+    "started_at": "2026-03-15T06:45:21.695647",
+    "finished_at": "2026-03-15T07:43:03.623928",
+    "n_total_trials": 3,
+    "stats": {
+        "n_trials": 3,
+        "n_errors": 1,
+        "evals": {
+            "tbench-claude-code__claude-opus-4-6__terminal-bench": {
+                "n_trials": 3,
+                "n_errors": 1,
+                "metrics": [
+                    {
+                        "mean": 0.3333333333333333
+                    }
+                ],
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "filter-js-from-html__EMenVhN"
+                        ],
+                        "0.0": [
+                            "model-extraction-relu-logits__2PEWWq9",
+                            "dna-assembly__axDNmNA"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "AgentTimeoutError": [
+                        "dna-assembly__axDNmNA"
+                    ]
+                }
+            }
+        }
+    }
+}
